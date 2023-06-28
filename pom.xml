@@ -11,4 +11,13 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>com.mycompany.gerenciadorpessoas.GerenciadorPessoas</exec.mainClass>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <!-- Outras dependências podem ser adicionadas aqui -->
+    </dependencies>
 </project>

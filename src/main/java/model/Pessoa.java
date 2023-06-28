@@ -1,6 +1,6 @@
 package model;
 
-import dao.BancoDados;
+import dal.BancoDados;
 
 
 public class Pessoa {

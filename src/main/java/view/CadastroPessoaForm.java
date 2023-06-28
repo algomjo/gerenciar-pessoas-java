@@ -4,14 +4,13 @@ import javax.swing.JOptionPane;
 import model.ConsultaCep;
 import model.Endereco;
 import model.Pessoa;
-import dao.BancoDados;
+import dal.BancoDados;
 
 /**
  *
  * @author algom
  */
 public class CadastroPessoaForm extends javax.swing.JFrame {
-
     /**
      * Creates new form CadastroPessoaForm
      */
@@ -292,7 +291,7 @@ public class CadastroPessoaForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        limparFormulario();
+        
     }//GEN-LAST:event_formMouseClicked
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {                                         

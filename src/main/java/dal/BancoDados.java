@@ -1,5 +1,4 @@
-package dao;
-
+package dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,6 +11,15 @@ public class BancoDados {
     private static final String USUARIO = "root";
     private static final String SENHA = "admin";
     
+    static {
+        try {
+            // Carrega o driver JDBC do MySQL
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void testarConexao(){
         try (Connection conn = DriverManager.getConnection(URL, USUARIO, SENHA)){
             System.out.println("Conexão bem sucedida com o banco de dados!");
@@ -20,9 +28,7 @@ public class BancoDados {
         }
     }
     
-    
-    
-        public static void criarTabelas() {
+    public static void criarTabelas() {
         try (Connection conn = DriverManager.getConnection(URL, USUARIO, SENHA)) {
             String sqlPessoas = "CREATE TABLE IF NOT EXISTS pessoas (" +
                                 "id INT AUTO_INCREMENT PRIMARY KEY," +
@@ -44,9 +50,7 @@ public class BancoDados {
             e.printStackTrace();
         }
     }
-        
      
-
     public static void salvarPessoa(Pessoa pessoa) {
         try (Connection conn = DriverManager.getConnection(URL, USUARIO, SENHA)) {
             String sql = "INSERT INTO pessoas (nome, cpf, email, telefone, cep, logradouro, numero, complemento, bairro, cidade, uf) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
